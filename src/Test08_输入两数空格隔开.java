@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Test08_输入两数空格隔开 {
 
 	@SuppressWarnings("resource")

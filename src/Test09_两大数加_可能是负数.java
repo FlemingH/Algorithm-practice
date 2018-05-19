@@ -1,7 +1,6 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-
 public class Test09_两大数加_可能是负数 {
 
 	@SuppressWarnings("resource")
@@ -12,8 +11,5 @@ public class Test09_两大数加_可能是负数 {
 		BigInteger big2 = scanner.nextBigInteger();
 		
 		System.out.println(big1.add(big2));
-		
-		
 	}
-	
 }
