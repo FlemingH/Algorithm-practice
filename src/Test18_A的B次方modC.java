@@ -1,4 +1,3 @@
-import java.math.BigInteger;
 import java.util.Scanner;
 
 
@@ -12,25 +11,32 @@ public class Test18_AµÄB´Î·½modC {
 		
 		String[] split = str.split("\\s+");
 
-		BigInteger a = new BigInteger(split[0]);
-		BigInteger b = new BigInteger(split[1]);
-		BigInteger c = new BigInteger(split[2]);
+		long a = Long.parseLong(split[0]);
+		long b = Long.parseLong(split[1]);
+		long c = Long.parseLong(split[2]);
 		
-		System.out.println(kuaisumi(a, b).mod(c));
-
+		int ans = fun(a, b, c);
+		
+		System.out.println(ans);
+		
 	}
-
-	private static BigInteger kuaisumi(BigInteger a, BigInteger b) {
-
-		if(b.equals(new BigInteger("1"))) return a;
-		BigInteger temp = kuaisumi(a, b.divide(new BigInteger("2")));
-
-		if(b.mod(new BigInteger("2")).equals(new BigInteger("0"))){
-			return temp.multiply(temp);
-		} else {
-			return a.multiply(temp).multiply(temp);
-		}
+	
+	public static int fun(long a,long b,long c)
+	{
+		int ans=1;
 		
+		while(b>0)
+		{
+			if(b%2==1)
+			{
+				ans=(int) ((ans*a)%c);
+				
+			}
+			b=b/2;
+			a=a*a%c;
+			
+		}
+		return ans;
 	}
 	
 }
